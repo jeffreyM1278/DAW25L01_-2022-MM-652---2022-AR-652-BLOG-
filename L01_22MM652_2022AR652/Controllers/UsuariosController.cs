@@ -16,14 +16,14 @@ namespace L01_22MM652_2022AR652.Controllers
             _context = context;
         }
 
-        // 📌 Obtener todos los usuarios
+ 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
             return await _context.Usuarios.ToListAsync();
         }
 
-        // 📌 Obtener un usuario por ID
+       
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -33,7 +33,7 @@ namespace L01_22MM652_2022AR652.Controllers
             return usuario;
         }
 
-        // 📌 Agregar un nuevo usuario
+        
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
@@ -42,7 +42,7 @@ namespace L01_22MM652_2022AR652.Controllers
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.UsuarioId }, usuario);
         }
 
-        // 📌 Actualizar un usuario existente
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
@@ -55,7 +55,7 @@ namespace L01_22MM652_2022AR652.Controllers
             return NoContent();
         }
 
-        // 📌 Eliminar un usuario
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
@@ -69,7 +69,7 @@ namespace L01_22MM652_2022AR652.Controllers
             return NoContent();
         }
 
-        // 📌 Obtener usuarios por nombre y apellido
+        
         [HttpGet("por-nombre-apellido/{nombre}/{apellido}")]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuariosPorNombreApellido(string nombre, string apellido)
         {
@@ -87,7 +87,7 @@ namespace L01_22MM652_2022AR652.Controllers
                 .ToListAsync();
         }
 
-        // 📌 Obtener el TOP N de usuarios con más comentarios
+        
         [HttpGet("top-usuarios-comentarios/{n}")]
         public async Task<ActionResult<IEnumerable<object>>> GetTopUsuariosPorComentarios(int n)
         {

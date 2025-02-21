@@ -13,4 +13,8 @@ namespace L01_22MM652_2022AR652.Models
         public DbSet<Comentario> Comentarios { get; set; }
         public DbSet<Calificacion> Calificaciones { get; set; }
     }
+
 }
+
+
+
